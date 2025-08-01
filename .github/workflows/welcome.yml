@@ -1,0 +1,16 @@
+name: Welcome New Contributors
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Thanks for your first issue! 🎉 Welcome to the community. Someone will take a look soon.'
+        pr-message: 'Thanks for your first pull request! 🚀 A maintainer will review it shortly.'
